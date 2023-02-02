@@ -23,6 +23,7 @@ androidx-test-ext-truth = "1.4.0"
 androidx-window = "1.1.0-alpha04"
 androidxHiltNavigationCompose = "1.0.0"
 androix-test-uiautomator = "2.2.0"
+benManes = "0.43.0"
 coil = "2.2.0"
 # @keep
 compileSdk = "33"
@@ -47,6 +48,7 @@ room = "2.5.0"
 secrets = "2.0.1"
 # @keep
 targetSdk = "33"
+versionCatalog = "0.7.0"
 
 [libraries]
 accompanist-flowlayout = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "accompanist" }
@@ -127,6 +129,9 @@ secrets-gradlePlugin = { module = "com.google.android.libraries.mapsplatform.sec
 
 [plugins]
 android = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+benManes = { id = "com.github.ben-manes.versions", version.ref = "benManes" }
+versionCatalog = { id = "nl.littlerobots.version-catalog-update", version.ref = "versionCatalog" }

@@ -40,8 +40,8 @@ plugins {
     alias(libs.plugins.kotlinAndroid).apply(false)
     alias(libs.plugins.kapt).apply(false)
     alias(libs.plugins.hilt).apply(false)
-    id("com.github.ben-manes.versions") version "0.43.0"
-    id("nl.littlerobots.version-catalog-update") version "0.7.0"
+    alias(libs.plugins.benManes).apply(true)
+    alias(libs.plugins.versionCatalog).apply(true)
 }
 
 apply("${project.rootDir}/buildscripts/toml-updater-config.gradle")
