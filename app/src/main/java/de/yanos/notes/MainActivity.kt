@@ -3,13 +3,11 @@ package de.yanos.notes
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -17,14 +15,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.adaptive.calculateDisplayFeatures
 import dagger.hilt.android.AndroidEntryPoint
-import de.yanos.notes.ui.theme.AppTheme
+import de.yanos.core.ui.theme.AppTheme
 import de.yanos.notes.ui.view.main.MainView
-import de.yanos.notes.ui.view.main.MainViewModel
 import de.yanos.notes.util.MainRoute
 import de.yanos.notes.util.NavigationChange
 import de.yanos.notes.util.navigateSingleTopTo
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint

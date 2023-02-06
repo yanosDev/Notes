@@ -1,7 +1,6 @@
 @file:Suppress("UnstableApiUsage")
 
-@Suppress("DSL_SCOPE_VIOLATION")
-plugins {
+@Suppress("DSL_SCOPE_VIOLATION") plugins {
     alias(libs.plugins.android)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kapt)
@@ -63,6 +62,9 @@ dependencies {
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)
+
+    implementation(libs.coreLibrary)
+    implementation("com.github.lzyzsd:circleprogress:1.1.0")
 
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
