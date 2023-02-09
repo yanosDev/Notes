@@ -59,12 +59,11 @@ android {
 }
 
 dependencies {
+    implementation(libs.coreLibrary)
+
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)
-
-    implementation(libs.coreLibrary)
-    implementation("com.github.lzyzsd:circleprogress:1.1.0")
 
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)

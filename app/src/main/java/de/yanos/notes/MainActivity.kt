@@ -3,8 +3,6 @@ package de.yanos.notes
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
-import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
@@ -13,7 +11,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.google.accompanist.adaptive.calculateDisplayFeatures
 import dagger.hilt.android.AndroidEntryPoint
 import de.yanos.core.ui.theme.AppTheme
 import de.yanos.notes.ui.view.main.MainView
@@ -25,14 +22,11 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppTheme {
-                val windowSize = calculateWindowSizeClass(this)
-                val displayFeatures = calculateDisplayFeatures(this)
-                NoteNavController(extras = intent.extras)
+            AppTheme(this) { config ->
+
             }
         }
     }
@@ -40,10 +34,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun NoteNavController(
-    modifier: Modifier = Modifier,
-    navController: NavHostController = rememberNavController(),
-    scope: CoroutineScope = rememberCoroutineScope(),
-    extras: Bundle?
+    modifier: Modifier = Modifier, navController: NavHostController = rememberNavController(), scope: CoroutineScope = rememberCoroutineScope(), extras: Bundle?
 ) {
     val changeCallback = { change: NavigationChange ->
         scope.launch {
@@ -52,10 +43,7 @@ fun NoteNavController(
         Unit
     }
     NoteNavHost(
-        modifier = modifier,
-        navController = navController,
-        startDestination = MainRoute.pathWithPlaceholder,
-        callback = changeCallback
+        modifier = modifier, navController = navController, startDestination = MainRoute.pathWithPlaceholder, callback = changeCallback
     )
 }
 
@@ -67,20 +55,12 @@ fun NoteNavHost(
     callback: (NavigationChange) -> Unit = {}
 ) {
     NavHost(
-        modifier = modifier,
-        navController = navController,
-        startDestination = startDestination
+        modifier = modifier, navController = navController, startDestination = startDestination
     ) {
-        composable(
-            route = MainRoute.pathWithPlaceholder,
-            arguments = MainRoute.args,
-            content = {
-                MainView(
-                    modifier = modifier,
-                    vm = hiltViewModel(),
-                    callback = callback
-                )
-            }
-        )
+        composable(route = MainRoute.pathWithPlaceholder, arguments = MainRoute.args, content = {
+            MainView(
+                modifier = modifier, vm = hiltViewModel(), callback = callback
+            )
+        })
     }
 }

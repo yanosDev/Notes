@@ -4,7 +4,7 @@
 #####
 [versions]
 accompanist = "0.28.0"
-androidGradlePlugin = "7.4.0"
+androidGradlePlugin = "7.4.1"
 androidx-activity-compose = "1.6.1"
 androidx-appcompat = "1.6.0"
 androidx-benchmark = "1.1.0"
@@ -23,21 +23,21 @@ androidx-test-ext-truth = "1.4.0"
 androidx-window = "1.1.0-alpha04"
 androidxHiltNavigationCompose = "1.0.0"
 androix-test-uiautomator = "2.2.0"
-benManes = "0.43.0"
+benManes = "0.45.0"
 coil = "2.2.0"
 # @keep
 compileSdk = "33"
 compose-compiler = "1.4.0"
 compose-snapshot = "-"
+coreLibrary = "0.1.9"
 coroutines = "1.6.4"
-coreLibrary = "0.1.8"
 google-maps = "18.1.0"
-hilt = "2.43.2"
+hilt = "2.44.2"
 hiltExt = "1.0.0"
 # @pin When updating to AGP 7.4.0-alpha10 and up we can update this https://developer.android.com/studio/write/java8-support#library-desugaring-versions
 jdkDesugar = "1.2.2"
 junit = "4.13.2"
-kotlin = "1.8.0"
+kotlin = "1.8.10"
 maps-compose = "2.5.3"
 material = "1.9.0-alpha01"
 # @keep
@@ -132,8 +132,8 @@ secrets-gradlePlugin = { module = "com.google.android.libraries.mapsplatform.sec
 [plugins]
 android = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 benManes = { id = "com.github.ben-manes.versions", version.ref = "benManes" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 versionCatalog = { id = "nl.littlerobots.version-catalog-update", version.ref = "versionCatalog" }
