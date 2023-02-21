@@ -12,7 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import de.yanos.core.ui.theme.AppTheme
+import de.yanos.corelibrary.ui.theme.AppTheme
 import de.yanos.notes.ui.view.main.MainView
 import de.yanos.notes.util.MainRoute
 import de.yanos.notes.util.NavigationChange

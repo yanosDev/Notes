@@ -38,6 +38,17 @@ android {
         }
     }
 
+    buildTypes {
+        debug {
+            buildConfigField(
+                "String",
+                "CLIENT_ID",
+                "334400399902-4jr62l2kho80umurcc6m87fqsgjg1qb4.apps.googleusercontent.com"
+            )
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
