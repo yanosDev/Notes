@@ -25,6 +25,7 @@ buildscript {
     dependencies {
         classpath(libs.android.gradlePlugin)
         classpath(libs.kotlin.gradlePlugin)
+        classpath(libs.google.services)
     }
 }
 

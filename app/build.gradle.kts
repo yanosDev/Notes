@@ -5,6 +5,7 @@
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
+    id(libs.plugins.googleServices.get().pluginId)
 }
 
 android {

@@ -27,12 +27,16 @@ benManes = "0.45.0"
 coil = "2.2.0"
 # @keep
 compileSdk = "33"
-compose-compiler = "1.4.0"
+compose-compiler = "1.4.2"
 compose-snapshot = "-"
-coreLibrary = "0.1.9"
+core-lib = "0.1.18"
 coroutines = "1.6.4"
+crashlytics = "2.9.4"
 google-maps = "18.1.0"
-hilt = "2.44.2"
+google-services = "20.4.1"
+googleServicesGradle = "4.3.15"
+firebase-bom = "31.2.2"
+hilt = "2.43.2"
 hiltExt = "1.0.0"
 # @pin When updating to AGP 7.4.0-alpha10 and up we can update this https://developer.android.com/studio/write/java8-support#library-desugaring-versions
 jdkDesugar = "1.2.2"
@@ -49,10 +53,12 @@ room = "2.5.0"
 secrets = "2.0.1"
 # @keep
 targetSdk = "33"
+timber-version = "5.0.1"
 versionCatalog = "0.7.0"
 
 [libraries]
 accompanist-flowlayout = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "accompanist" }
+accompanist-navigation-animation = { module = "com.google.accompanist:accompanist-navigation-animation", version.ref = "accompanist" }
 accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
 accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
 accompanist-swiperefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanist" }
@@ -108,10 +114,20 @@ androidx-test-uiautomator = { module = "androidx.test.uiautomator:uiautomator", 
 androidx-window = { module = "androidx.window:window", version.ref = "androidx-window" }
 coil-kt-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 core-jdk-desugaring = { module = "com.android.tools:desugar_jdk_libs", version.ref = "jdkDesugar" }
-coreLibrary = { module = "com.github.yanosDev:CoreLibrary", version.ref = "coreLibrary" }
+coreLibrary = { module = "com.github.yanosDev:CoreLibrary", version.ref = "core-lib" }
+crashLog = { module = "com.github.yanosDev:CrashLog", version.ref = "core-lib" }
+firestoreWrapper = { module = "com.github.yanosDev:FirestoreWrapper", version.ref = "core-lib" }
+crashlytics-gradlePlugin = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "crashlytics" }
 google-android-material = { module = "com.google.android.material:material", version.ref = "material" }
 googlemaps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "maps-compose" }
 googlemaps-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "google-maps" }
+google-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "google-services" }
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServicesGradle" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
+firebase-crashlytics-buildtools = { module = "com.google.firebase:firebase-crashlytics-buildtools" }
+firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ndk" }
+firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
+firebase-auth = { module = "com.google.firebase:firebase-auth-ktx" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
@@ -128,12 +144,16 @@ robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectr
 rometools-modules = { module = "com.rometools:rome-modules", version.ref = "rome" }
 rometools-rome = { module = "com.rometools:rome", version.ref = "rome" }
 secrets-gradlePlugin = { module = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin", version.ref = "secrets" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber-version" }
 
 [plugins]
 android = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 benManes = { id = "com.github.ben-manes.versions", version.ref = "benManes" }
+crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlytics" }
+googleServices = { id = "com.google.gms.google-services", version.ref = "googleServicesGradle" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+mavenPublish = { id = "maven-publish" }
 versionCatalog = { id = "nl.littlerobots.version-catalog-update", version.ref = "versionCatalog" }
